@@ -10,7 +10,7 @@ build:
   tools:
     python: "3.12"
   commands:
-    -pip install sphinx-rtd-theme
+    - pip install sphinx-rtd-theme
     # You can also speci fy other tool versions:
     # nodejs: "20"
     # rust: "1.70"
