@@ -11,6 +11,7 @@ build:
     python: "3.12"
   commands:
     - pip install sphinx-rtd-theme
+    - sphinx-build -b html . _build/html
     # You can also speci fy other tool versions:
     # nodejs: "20"
     # rust: "1.70"
