@@ -1,2 +1,3 @@
 # BNN
-BlogAndNote
+    
+我自己的博客，用来记笔记的
