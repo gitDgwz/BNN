@@ -9,11 +9,17 @@ Welcome to BNN !
 .. toctree::
    :maxdepth: 2
 
-   准备做的事情/index.rst
+   .Net/index
 
-   .Net/index.rst
+   Linux/index
+
+   Git/index
+
+   update_plan/index
    
-   文档的创建/index.rst
+   docs_build/index
+
+   
 
 
 Indices and tables
