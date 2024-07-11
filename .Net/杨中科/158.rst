@@ -1,2 +1,133 @@
 SignalR的基本使用
-================
+==================
+
+#.  创建一个.NET新建项目
+
+#.  将项目命名为 BlazorSignalRApp
+
+#.  **将“交互式呈现模式”更改为 WebAssembly。** 
+
+#.  ``dotnet add package Microsoft.AspNetCore.SignalR.Client`` 添加SignalR客户端库
+
+#.  添加SignalRHub::
+
+        在服务器 BlazorSignalRApp 项目中，创建 Hubs（复数）文件夹，并添加以下 ChatHub 类 (Hubs/ChatHub.cs)：
+
+        using Microsoft.AspNetCore.SignalR;
+        namespace BlazorSignalRApp.Hubs;
+
+        public class ChatHub : Hub
+        {
+            public async Task SendMessage(string user, string message)
+            {
+                await Clients.All.SendAsync("ReceiveMessage", user, message);
+            }
+        }
+
+#.  打开服务器 BlazorSignalRApp 项目的 Program 文件。将 Microsoft.AspNetCore.ResponseCompression 和 ChatHub 类的命名空间添加到文件的顶部：::
+     
+        using Microsoft.AspNetCore.ResponseCompression;
+        using BlazorSignalRApp.Hubs;
+
+#.  添加以下代码,注意代码存在先后顺序::
+
+        builder.Services.AddSignalR();
+
+        builder.Services.AddResponseCompression(opts =>
+        {
+        opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+            ["application/octet-stream"]);
+        });
+
+        app.UseResponseCompression();
+
+        app.MapHub<ChatHub>("/chathub");
+
+#.  将以下 Pages/Chat.razor 文件添加到 BlazorSignalRApp.Client 项目::
+
+        @page "/chat"
+        @rendermode InteractiveWebAssembly
+        @using Microsoft.AspNetCore.SignalR.Client
+        @inject NavigationManager Navigation
+        @implements IAsyncDisposable
+
+        <PageTitle>Chat</PageTitle>
+
+        <div class="form-group">
+            <label>
+                User:
+                <input @bind="userInput" />
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Message:
+                <input @bind="messageInput" size="50" />
+            </label>
+        </div>
+        <button @onclick="Send" disabled="@(!IsConnected)">Send</button>
+
+        <hr>
+
+        <ul id="messagesList">
+            @foreach (var message in messages)
+            {
+                <li>@message</li>
+            }
+        </ul>
+
+        @code {
+            private HubConnection? hubConnection;
+            private List<string> messages = new List<string>();
+            private string? userInput;
+            private string? messageInput;
+
+            protected override async Task OnInitializedAsync()
+            {
+                hubConnection = new HubConnectionBuilder()
+                    .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+                    .Build();
+
+                hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+                {
+                    var encodedMsg = $"{user}: {message}";
+                    messages.Add(encodedMsg);
+                    InvokeAsync(StateHasChanged);
+                });
+
+                await hubConnection.StartAsync();
+            }
+
+            private async Task Send()
+            {
+                if (hubConnection is not null)
+                {
+                    await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+                }
+            }
+
+            public bool IsConnected =>
+                hubConnection?.State == HubConnectionState.Connected;
+
+            public async ValueTask DisposeAsync()
+            {
+                if (hubConnection is not null)
+                {
+                    await hubConnection.DisposeAsync();
+                }
+            }
+        }
+
+#.  将一个条目添加到 NavMenu 组件以访问聊天页面。
+    在紧跟在 Weather 组件的 <div> 块后面的 Components/Layout/NavMenu.razor 中，
+    添加以下 <div> 块::
+
+        <div class="nav-item px-3">
+        <NavLink class="nav-link" href="chat">
+            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Chat
+        </NavLink>
+         </div>
+
+#.  运行项目,并且在Url后添加 ``/chat`` 进入page页面
+
+2024-07-11
