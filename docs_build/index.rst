@@ -50,4 +50,72 @@ github创建项目
 
 2024-07-04 下午10:43
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+reStructuredText的基本用法
+
+标题::
+
+    =========== 
+    一级标题
+    -----------
+    二级标题
+    ^^^^^^^^^^^
+    三级标题
+
+内联标记::
+    
+    *text*
+    斜体
+    **text**
+    加粗
+    ``text``
+    代码
+
+常用
+
+    换行::
+
+        | text
+
+    代码块::
+
+        :: 
+            text
+
+    告诫Admonitions::
+
+        ("attention", "caution", "danger", "error", "hint", "important", "note", "tip", "warning")
+        .. note::
+            text
+
+    脚注::
+
+        .. [#] text
+
+    字段::
+
+        :fieldname: text
+
+
+
+交叉引用
+--------------------------
+
+语法规则::
+    
+    :role:`target`
+
+
+
+创建标签::
+
+    必须要有下划线
+    .. _label:
+
+    text
+
+跳转到标签::
+
+    不要有下划线
+    :ref:`here <label>`

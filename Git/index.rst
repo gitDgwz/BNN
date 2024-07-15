@@ -20,6 +20,8 @@ git命令
 
 ``git branch`` 查看所有分支
 
+``git merge`` 合并分支
+
 
 Github
 ---------------

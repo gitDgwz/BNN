@@ -1,0 +1,26 @@
+159.SignalR的协议协商问题
+=========================
+
+|   SignalR支持多种服务器推送方式,Websocket,
+    Server-Sent Events ,长轮询,按默认顺序尝试
+|   Websocket性能最好
+
+默认会启动协商,negotiation
+
+集群中协商协议的问题,协商请求被A服务器处理,但Websocket请求却被B服务器处理
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**解决方法**
+
+|   *粘性会话*: 缺点,共享公网IP的请求无法被平均的分配到服务器集群,扩容的自适应性不强
+|   *禁止协商*: 直接建立连接
+
+在 .NET 客户端中，可以通过提供给 WithUrl 的选项委托来修改这些选项,来禁用协商 ::
+
+    var connection = new HubConnectionBuilder()
+    .WithUrl("https://example.com/chathub", options => {
+        options.SkipNegotiation = true;
+        options.Transports = HttpTransportType.WebSockets;
+    })
+    .Build();

@@ -1,0 +1,16 @@
+160.SignalR的分布式部署
+========================
+
+分布式问题
+
+1.  四个客户端被连接到不同的两个服务器上,消息无法传递
+2.  解决方法:所有服务器连接到同一个消息中间件,使用粘性会话或跳过协商(Websocket)
+3.  官方方案:Redis backplane ::
+
+        NeGet:Microsoft.AspNetCOre.SignalR.StackExchangeRedis
+        builder.Services.AddSignalR().AddStackExchangeRedis("127.0.0.1",
+        options=>{options.Configuration.ChannelPrefix="Test1_";});
+
+
+
+       

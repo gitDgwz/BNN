@@ -13,6 +13,8 @@ Welcome to BNN !
 
    Linux/index
 
+   Godot/index
+
    Git/index
 
    update_plan/index
