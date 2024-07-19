@@ -7,3 +7,4 @@ Godot
     :glob:
 
     basic/*
+    ways/*

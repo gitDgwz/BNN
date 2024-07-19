@@ -72,6 +72,18 @@ reStructuredText的基本用法
     ``text``
     代码
 
+图片插入::
+
+    .. image:: path
+        :height: 100px
+        :width: 200 px
+        :scale: 50 %
+        :alt: alternate text
+        :align: right
+        
+    可以用绝对路径/ ,或者相对路径../
+
+
 常用
 
     换行::
@@ -98,14 +110,12 @@ reStructuredText的基本用法
         :fieldname: text
 
 
-
 交叉引用
 --------------------------
 
 语法规则::
     
     :role:`target`
-
 
 
 创建标签::
@@ -119,3 +129,4 @@ reStructuredText的基本用法
 
     不要有下划线
     :ref:`here <label>`
+

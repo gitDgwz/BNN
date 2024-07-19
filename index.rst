@@ -17,10 +17,11 @@ Welcome to BNN !
 
    Git/index
 
-   update_plan/index
+   memorandum/index
    
    docs_build/index
 
+   meditation/index
    
 
 
