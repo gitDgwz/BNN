@@ -211,13 +211,15 @@ git rm 则不需要.最后还是要提交
 
     ``git checkout beta`` 切换到beta分支上
 
-``git switch`` (推荐)切换分支,不改变工作区的内容
+``git switch`` (推荐)切换分支,不改变工作区的内容,但是某个文件修改内容后,未知
 
      ``git switch beta`` 切换到beta分支上
 
 ``git merge`` 合并不同分支的内容到当前分支中
 
     ``git merge beta`` 将beta分支的内容合并到当前分支中
+
+
 
 
 
