@@ -17,7 +17,7 @@ linux
 
     ./*
 
-linux
+linux文件
 ---------------
 
 \/bin目录存放的的是系统基本命令,一些二进制文件可执行文件,
@@ -36,7 +36,11 @@ linux命令
 
     ``echo "hello"`` 将hello输出到终端
 
-    例子 ``echo "hello" > file1.txt"`` 将hello输入到file1文件,如果没有该文件则创建
+    ``echo "hello" > file1.txt"`` 将hello输入到file1文件,如果没有该文件则创建
+
+    ``echo $HOME`` 查看系统环境变量的值
+
+    ``echo $0`` 查看当前正在执行的脚本的名称
 
 ``touch`` 更新文件修改时间,如果没有该文件则创建
 
@@ -207,7 +211,15 @@ linux命令
 
 ``tree`` 以树状图形式显示目录的结构,不是linux自带,需要安装
 
+``nano hello.sh`` 使用nano打开hello.sh,类似vi和vim
 
+``shuf -i 1-10 -n 1`` 生成随机数,-i表示范围,-n表示生成几个,shuffle洗牌的缩写
+
+``kill [sig] PID`` 杀死进程
+
+    ``-9`` 强制立即删除信号,可能造成数据丢失
+
+    ``-2``：中断信号，类似于用户按 Ctrl+C 的效果。
 
 vi和vim
 ----------------------
