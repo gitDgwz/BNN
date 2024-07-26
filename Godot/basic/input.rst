@@ -15,3 +15,14 @@ window的Viewport对接收到的输入做了很多事情，顺序如下：
 .. image:: ../images/input_event_scene_flow.png
 
 此顺序不适用于控制。_ gui_input（），它基于事件位置或焦点控件使用不同的方法。
+
+
+UI input
+------------------
+
+Mouse Filter
+    stop:自己接受信号,并且不传递
+
+    pass,自己接受信号,如果不处理,则传递
+
+    ignore:不接受,传递

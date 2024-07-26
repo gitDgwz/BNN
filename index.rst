@@ -17,13 +17,11 @@ Welcome to BNN !
 
    Git/index
 
-   memorandum/index
-   
    docs_build/index
+  
+   memorandum/index
 
    meditation/index
-   
-
 
 Indices and tables
 ==================

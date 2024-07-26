@@ -21,7 +21,7 @@ signal
 
 #.  在连接时候绑定参数 
 
-    连接信号 ``someSignal.connect(callable).bind(para)``
+    连接信号 ``someSignal.connect(callable.bind(para))``
 
     发出信号 ``emit_signal("someSignal")``
 
