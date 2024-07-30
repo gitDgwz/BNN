@@ -2,11 +2,11 @@
 ====================
 
 .. toctree:: 
-    :glob:
+    :maxdepth: 2
 
-    
-    杨中科/*
+    杨中科/index
 
+    microsoftLearn/index
 
 
 VScode
@@ -14,9 +14,14 @@ VScode
 
 跨平台代码编辑器
 
+vscode commands
+--------------------
+
+``code .`` 以当前目录打开vscode
+
+
 VScode .Net安装
 ----------------
-
 
 如果要开发 .NET 应用，请安装 SDK(包括运行时)。
 或者，如果只需运行应用程序，请安装运行时.
@@ -42,25 +47,22 @@ openSUSE 15安装 .NET 之前，请运行以下命令，将 Microsoft 包签名�
     sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
     这条命令将 microsoft-prod.repo 文件的所有权改为 root:root,这是一种安全措施,防止未经授权的用户修改仓库配置文件。
 
-
 VScode 新建项目
------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``dotnet new list`` 查看模板列表
 
+VScode Blazor项目创建(.net)
 
-VScode Blazor项目创建
-^^^^^^^^^^^^^^^^^^^^^^^
+    * ``dotnet --version`` 确认安装了.Net
 
-* ``dotnet --version`` 确认安装了.Net
+    * ``dotnet new blazor -o BlazorAPP`` 创建Blazor 并取名为BlazorAPP
 
-* ``dotnet new blazor -o BlazorAPP`` 创建Blazor 并取名为BlazorAPP
+    * ``cd BlazorAPP`` 进入项目文件夹
 
-* ``cd BlazorAPP`` 进入项目文件夹
+    * ``ls`` 查看项目结构
 
-* ``ls`` 查看项目结构
-
-* ``dotnet watch`` 创建并且启动应用程序
+    * ``dotnet watch`` 创建并且启动应用程序
 
 
 VScode 工作区和配置文件

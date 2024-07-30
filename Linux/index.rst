@@ -15,7 +15,7 @@ linux
 .. toctree:: 
     :glob:
 
-    ./*
+    *
 
 linux文件
 ---------------
