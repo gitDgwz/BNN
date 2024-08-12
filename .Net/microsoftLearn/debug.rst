@@ -5,6 +5,12 @@ debug
 vscode debug
 ---------------------------
 
+生成debug文件:
+    命令面板->.net generate
+
+    .. attention:: 
+        如果报错,没有找到.net项目,重启vscode.
+
 查看变量
     左侧面板中,可以双击改变值,或者将鼠标放在代码变量上可以直接查看值
 

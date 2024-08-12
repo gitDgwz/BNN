@@ -50,6 +50,19 @@ linux命令
 
     ``cat hello.txt`` 查看hello文件的内容
 
+``ss`` 命令可以用来查看网络连接、监听端口、统计数据和错误信息等,socket status 缩写
+
+    ``-t`` tcp
+
+    ``-u`` udp
+
+    ``-l`` listening
+
+    ``-p`` process
+
+``ps`` 查看进程,process status缩写
+
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``ls`` 查看当前目录下的文件和文件夹

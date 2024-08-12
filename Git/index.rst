@@ -4,7 +4,7 @@ Git学习笔记
 .. toctree:: 
     :glob:
 
-    ./*
+    *
 
 
 
