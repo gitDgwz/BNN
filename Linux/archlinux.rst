@@ -7,7 +7,6 @@ archlinux
 archlinux官方有非常详细的步骤,按照官方说明即可.
 
 踩坑的地方
-^^^^^^^^^^^^^^^^^
 
 #.  磁盘分区没有修改分区类型    
 #.  加载国内镜像时默认没有打开,/etc/pacman.d/mirrorlist里面全是注释的,手动将其取消注释,装机成功后建议添加清华源
@@ -44,28 +43,53 @@ archlinux官方有非常详细的步骤,按照官方说明即可.
 
         #.  安装wqy-zenhei包.
 
-*   桌面环境(Xfce4)
+*    图形界面
 
-        #.  安装 xfce4 包
 
-        #.  需要从显示管理器中选择Xfce Session,因此需要先安装显示管理器,
-                
-                安装 LightDM.
-                
-                    #.  安装 lightdm ,xorg-server,lightdm-gtk-greeter,三个包
-                    #.  确保使用 systemctl 启用 lightdm.service，如此来让 LightDM 开机启动。参考显示管理器#加载显示管理器。 
+图形界面
+---------------------------------------
+显示管理器 窗口管理器 桌面环境
 
-        #.  登录的右上角可以选择Xfce Session,进入桌面
-                
+
+桌面环境(Xfce4)
+
+#.  安装 xfce4 包
+
+#.  需要从显示管理器中选择Xfce Session,因此需要先安装显示管理器,这里使用LightDM
+
+        *       安装 lightdm ,xorg-server,lightdm-gtk-greeter,三个包
+        *       确保使用 systemctl 启用 lightdm.service，如此来让 LightDM 开机启动.
+
+#.  登录的右上角可以选择Xfce Session,进入桌面
+
+
+
+
+
+
+python                
+---------------
+**python-pip与pacman冲突**,只能使用pipx,pipx则是调用pip,在虚拟隔离环境下进行安装
 
 VScode
 ----------------
 archlinux官方开源版无法使用扩展,微软官方版在AUR中
 
-
-
 sphinx
 -----------------
-python-sphinx,sphinx,官方包
-python-sphinx_rtd_theme,rtd主题,官方包
-make,GNU make,官方包
+*sphinx用到的包,以下皆为在pacman中安装*
+
+|       python-sphinx,sphinx,官方包
+|       python-sphinx_rtd_theme,rtd主题,官方包
+|       make,GNU make,官方包
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+VScode中esbonio插件使用pip安装,会造成冲突,使用了pacman安装也不起作用,
+
+解决方法
+
+#.      使用makefile文件make html
+#.      安装VScode html实时预览插件,预览html文件
+
+
