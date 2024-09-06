@@ -12,12 +12,25 @@ github创建项目
 *   点击New repository,创建新仓库
 *   clone仓库到本地 
 
+python下载
+------------------------------
+下载python和pip.
+
+*   windows中直接Store中下载就可以,自带pip.最方便,手动去官网下载网络连接困难.
+*   linux只用包管理器下载
+*   .. _python换源:
+
+    **换清华源** ``pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple``,安装快了,但是search还是慢,应该只换了下载源
+
+
 使用sphinx创建reST项目
 -----------------------------
     
 下载python-sphinx包,包名一般为python-sphinx或者python3-sphinx
 
     *   python pip命令
+
+       
     *   opensuse zypper命令
 
 下载完成后,在本地仓库终端输入 ``sphinx-quickstart`` 创建初始项目
@@ -41,18 +54,35 @@ github创建项目
 -----------------------------
 
 #.  conf.py文件中中文为zh_CN是下划线
-#.  如果要使用rtd主题
+#.  如果要使用rtd主题(必须在构建的时候有这个包)
 
     *   要在ReadTheDocs构建环境中添加sphinx-rtd-theme (yaml文件build.commands中添加此包)
     *   conf.py中添加 ``html_theme = 'sphinx_rtd_theme'`` ,注意是下划线
 #.  ReadTheDocs输出的路径为 ``$READTHEDOCS_OUTPUT`` 默认环境
 
-
 2024-07-04 下午10:43
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+vscode预览
+--------------------------------
+使用Esbonio插件(可以一遍修改一遍预览),安装后vscode右上角会有个预览的按键.
+
+#.  必须要有python环境和pip,因为安装Esbonio它使用的就是pip下载
+
+        如果在windows中可以直接在windowsStore中下载安装,因为python的网络并不好
+
+        下载后可以换源 :ref:`换清华源<python换源>`
+
+#.  必须有对应的主题包,要不然会报错
+
+#.  要有sphinx包(未验证)
+
+**如果预览案件不起作用.注意vscdoe左下角的报错**
+
+**记得重启vscode,有时候必须重启才能起效.**
+
 
 reStructuredText的基本用法
+-------------------------------------------
 
 链接树::
 
