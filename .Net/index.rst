@@ -2,12 +2,10 @@
 ====================
 
 .. toctree:: 
-    :maxdepth: 2
+    :maxdepth: 1
+    :glob:
 
-    杨中科/index
-
-    microsoftLearn/index
-
+    */index
 
 VScode
 =================

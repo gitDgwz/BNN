@@ -23,7 +23,4 @@ meditation冥想
 在一些令你痛苦,不适的时刻,或者有一些让你产生执念的事情,可以选择练习冥想,停止下来,聚焦在呼吸上,
 观察他们,捕捉他们,并且放下他们.这是一项能够让你保持身心健康的技能.
 
-.. [1] 岱川博士 B站UP主
-        
-    www.bilibili.com/video/BV1XA411N7ZU/?spm_id_from=333.337.search-card.all.click&vd_source=881bab638947ea46dee0f5ff7033068d
 
