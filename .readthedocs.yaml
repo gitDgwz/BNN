@@ -10,7 +10,7 @@ build:
   tools:
     python: "3.12"
   commands:
-    - pip install sphinx-rtd-theme
+    - pip install piccolo-theme
     - sphinx-build -b html . $READTHEDOCS_OUTPUT/html
     # You can also speci fy other tool versions:
     # nodejs: "20"
