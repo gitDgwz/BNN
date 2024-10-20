@@ -28,10 +28,10 @@ python下载
     
 下载python-sphinx包,包名一般为python-sphinx或者python3-sphinx
 
-    *   python pip命令
+*   python pip命令
 
        
-    *   opensuse zypper命令
+*   opensuse zypper命令
 
 下载完成后,在本地仓库终端输入 ``sphinx-quickstart`` 创建初始项目
 
@@ -57,7 +57,7 @@ python下载
 #.  如果要使用rtd主题(必须在构建的时候有这个包)
 
     *   要在ReadTheDocs构建环境中添加sphinx-rtd-theme (yaml文件build.commands中添加此包)
-    *   conf.py中添加 ``html_theme = 'sphinx_rtd_theme'`` ,注意是下划线
+    *   conf.py中添加 ``html_theme = 'sphinx_rtd_theme'`` (如果是别的主题就自行更改),注意是下划线
 #.  ReadTheDocs输出的路径为 ``$READTHEDOCS_OUTPUT`` 默认环境
 
 2024-07-04 下午10:43
@@ -74,7 +74,7 @@ vscode预览
 
 #.  必须有对应的主题包,要不然会报错
 
-#.  要有sphinx包(未验证)
+#.  不需要有sphinx包
 
 **如果预览案件不起作用.注意vscdoe左下角的报错**
 

@@ -19,6 +19,8 @@ Welcome to BNN !
 
    docs_build/index
   
+   computer/index
+
    memorandum/index
 
    meditation/index
