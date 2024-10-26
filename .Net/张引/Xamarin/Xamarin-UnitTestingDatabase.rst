@@ -75,7 +75,7 @@ Xamarin-UnitTestingDatabase
 
                 Assert.IsTrue(File.Exists(PoetryStorage.PoetryDbpath));
 
-                ///验证使用到了Set函数，并且只使用了一次
+                ///验证使用到了Set函数,并且只使用了一次
                 preferenceStorageMock.Verify(
                     p=>p.Set(PoetryStorageConstants.VersionKey,PoetryStorageConstants.Version),Times.Once);
 

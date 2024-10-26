@@ -1,6 +1,6 @@
 archlinux
 =================
-轻量化，极简，高定制的系统，需要一定的动手能力,拥有无与伦比的wiki和文档(中文),
+轻量化,极简,高定制的系统,需要一定的动手能力,拥有无与伦比的wiki和文档(中文),
 
 下载和安装
 -------------
@@ -25,11 +25,11 @@ archlinux官方有非常详细的步骤,按照官方说明即可.
 
 *   输入法  
         
-        fcitx5,输入法,仅提供基本框架，且仅支持英文。如果要输入其他语言（例如中文或日文），则需要安装输入法引擎（IME）。
+        fcitx5,输入法,仅提供基本框架,且仅支持英文。如果要输入其他语言（例如中文或日文）,则需要安装输入法引擎（IME）。
 
         fcitx5-im,包组提供 fcitx5包 本体、#配置工具和#输入法模块。 
         
-        fcitx5-chinese-addons,包含与中文相关的 addon，例如拼音、双拼和五笔。
+        fcitx5-chinese-addons,包含与中文相关的 addon,例如拼音、双拼和五笔。
 
         安装后在GUI,configure中添加pinyin,默认只显示系统语言输入法.
 
@@ -37,7 +37,7 @@ archlinux官方有非常详细的步骤,按照官方说明即可.
 
         #.  修改 ``/etc/locale.gen`` 文件来设定系统中可以使用的locale,取消对应项前的注释符号“#”即可.
 
-        #.  然后执行 ``locale-gen`` 命令，便可以在系统中使用这些 locale。
+        #.  然后执行 ``locale-gen`` 命令,便可以在系统中使用这些 locale。
 
         #.  ``/etc/locale.conf`` 全局locale不建议设置为中文,可以不用修改
 
@@ -62,7 +62,7 @@ archlinux官方有非常详细的步骤,按照官方说明即可.
 #.  需要从显示管理器中选择Xfce Session,因此需要先安装显示管理器,这里使用LightDM
 
         *       安装 lightdm ,xorg-server,lightdm-gtk-greeter,三个包
-        *       确保使用 systemctl 启用 lightdm.service，如此来让 LightDM 开机启动.
+        *       确保使用 systemctl 启用 lightdm.service,如此来让 LightDM 开机启动.
 
 #.  登录的右上角可以选择Xfce Session,进入桌面
 

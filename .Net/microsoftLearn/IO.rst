@@ -82,7 +82,7 @@ Environment:
 Path:
 
 ``Path.DirectorySeparatorChar`` 自动将该字段解释为适用于操作系统的分隔符,
-例如，Windows 使用反斜杠 (stores\201)，而 macOS 使用正斜杠 (stores/201)。
+例如,Windows 使用反斜杠 (stores\201),而 macOS 使用正斜杠 (stores/201)。
 
 ``Path.Combine`` 联接路径,如果想要获取stores里面的201文件夹
 ::

@@ -16,7 +16,7 @@
 |   *粘性会话*: 缺点,共享公网IP的请求无法被平均的分配到服务器集群,扩容的自适应性不强
 |   *禁止协商*: 直接建立连接
 
-在 .NET 客户端中，可以通过提供给 WithUrl 的选项委托来修改这些选项,来禁用协商 ::
+在 .NET 客户端中,可以通过提供给 WithUrl 的选项委托来修改这些选项,来禁用协商 ::
 
     var connection = new HubConnectionBuilder()
     .WithUrl("https://example.com/chathub", options => {

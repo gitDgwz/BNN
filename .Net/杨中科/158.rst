@@ -11,7 +11,7 @@
 
 #.  添加SignalRHub::
 
-        在服务器 BlazorSignalRApp 项目中，创建 Hubs（复数）文件夹，并添加以下 ChatHub 类 (Hubs/ChatHub.cs)：
+        在服务器 BlazorSignalRApp 项目中,创建 Hubs（复数）文件夹,并添加以下 ChatHub 类 (Hubs/ChatHub.cs)：
 
         using Microsoft.AspNetCore.SignalR;
         namespace BlazorSignalRApp.Hubs;
@@ -119,7 +119,7 @@
         }
 
 #.  将一个条目添加到 NavMenu 组件以访问聊天页面。
-    在紧跟在 Weather 组件的 <div> 块后面的 Components/Layout/NavMenu.razor 中，
+    在紧跟在 Weather 组件的 <div> 块后面的 Components/Layout/NavMenu.razor 中,
     添加以下 <div> 块::
 
         <div class="nav-item px-3">

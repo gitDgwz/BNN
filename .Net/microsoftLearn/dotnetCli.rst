@@ -17,7 +17,7 @@ dotnet ClI
  
 ``dotnet remove package <name of dependency>`` 要移除项目中的某个包
 
-``dotnet list package`` 该命令只列出顶层包，而不列出那些包的依赖项
+``dotnet list package`` 该命令只列出顶层包,而不列出那些包的依赖项
 
     ``--include-transitive`` 列出所有可传递包
 
@@ -25,9 +25,9 @@ dotnet ClI
 
         ``--outdated --include-prerelease`` 若要检查预发行包
 
-``dotnet restore`` 在创建或克隆项目时，在生成项目之前，
+``dotnet restore`` 在创建或克隆项目时,在生成项目之前,
 将不会下载或安装随附的依赖项,
 手动还原依赖项以及项目文件中指定的特定于项目的工具,
-(多数情况下，不需要显式使用此命令。 如果需要，
-在运行 new、build 和 run 之类的命令时，将隐式运行 NuGet 还原.)
+(多数情况下,不需要显式使用此命令。 如果需要,
+在运行 new、build 和 run 之类的命令时,将隐式运行 NuGet 还原.)
 
