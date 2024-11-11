@@ -78,4 +78,23 @@ Avalonia6Mock2
    
         public async Task<IList<Poetry>> GetPoetriesAsync(Expression<Func<Poetry, bool>> where, int skip, int take)=>
             await Connection.Table<Poetry>().Where(where).Skip(skip).Take(take).ToListAsync();
-*   在dpa.Library中添加ViewModels文件夹.并且添加ResultViewModels.cs和一个新的ViewModelBase.cs
+*   在dpa.Library中添加ViewModels文件夹.并且添加ResultViewModels.cs和一个新的ViewModelBase.cs 
+    并且在dpa.Library中添加包CommunityToolkit.Mvvm
+    ::
+
+        public class ViewModelBase : ObservableObject
+        {
+            
+        }
+
+    ::
+
+        public class ResultViewModel : ViewModelBase
+        {
+            private readonly IPoetryStorage _poetryStorage;
+
+            public ResultViewModel(IPoetryStorage poetryStorage)
+            {
+                _poetryStorage = poetryStorage;
+            }
+        }
