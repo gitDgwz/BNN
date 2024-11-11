@@ -28,7 +28,7 @@ Avalonia4单元测试
         {
             [SQLite.Column("id")] public int Id { get; set; }
             
-            [SQLite.Column("name")] public int Name { get; set; }
+            [SQLite.Column("name")] public string Name { get; set; }
 
             [SQLite.Column("author_name")] public string Author { get; set; } = string.Empty;
 
