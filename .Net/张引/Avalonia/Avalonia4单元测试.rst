@@ -71,7 +71,7 @@ Avalonia4单元测试
 
             public static string GetLocalFfilePath(string fileName)
             {
-                return Path.Combine(_localFolder, fileName);
+                return Path.Combine(LocalFolder, fileName);
             }
         }
 
