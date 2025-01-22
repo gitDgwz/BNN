@@ -70,23 +70,3 @@ ViewLocator是一个IDataTemplate，App.xamal中注册了全局的ViewLocator,
             }
         }
 
-*   dpa Views创建 Avalonia user control 名为"MainView",安装 ``Projektanker.Icons.Avalonia.FontAwesome`` 9.4.2版本
-*   在dpa Program.cs中修改一句话
-    ::
-
-        //修改前
-        public static AppBuilder BuildAvaloniaApp()
-            =>  AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .WithInterFont()
-                .LogToTrace();
-        
-        //修改后
-        public static AppBuilder BuildAvaloniaApp()
-        {
-            IconProvider.Current.Register<FontAwesomeIconProvider>();
-            return AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .WithInterFont()
-                .LogToTrace();
-        }
