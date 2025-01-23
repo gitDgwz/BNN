@@ -98,6 +98,7 @@ Avalonia 23：对象创建模式与反射
     var orderInstance= new Order();
 
     var orderTypeInfo=typeof(Order);
+    
     var anotherOrderInstance=(Order) Activator.CreateInstance(orderTypeInfo);
 
 根据字符串获得类型信息
