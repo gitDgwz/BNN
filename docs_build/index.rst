@@ -60,6 +60,9 @@ python下载
     *   conf.py中添加 ``html_theme = 'sphinx_rtd_theme'`` (如果是别的主题就自行更改),注意是下划线
 #.  ReadTheDocs输出的路径为 ``$READTHEDOCS_OUTPUT`` 默认环境
 
+#.  不支持#符号作为文件名
+#.  可以写多个 ``..totree`` 进行引用
+
 2024-07-04 下午10:43
 
 vscode预览

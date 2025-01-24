@@ -1,10 +1,25 @@
 Godot
 ===============
 
-基础知识
+C#
+
+.. toctree:: 
+    :glob:
+
+    CSharp/*
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gdcript
 
 .. toctree:: 
     :glob:
 
     basic/*
+
+
+
+.. toctree:: 
+    :glob:
+
     ways/*
