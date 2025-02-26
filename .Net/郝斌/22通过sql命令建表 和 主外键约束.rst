@@ -40,7 +40,9 @@ check
 
 insert
 
-    insert into table_name values(a,b,c,d)
+    如果不写column_name，那么必须全部赋值.如果某个属性不赋值而且没有默认值那么为null.
+
+    insert into table_name [(column_name)] values(a,b,c,d)
 
 default 默认值
 

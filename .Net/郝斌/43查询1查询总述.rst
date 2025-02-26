@@ -1,0 +1,148 @@
+43 查询1_查询总述
+=============================
+
+查询
+------------------------
+
+计算列
+
+    select empno,sal*12 as "年薪" from emp
+
+distinct[不允许重复的],写在select后面.整体过滤，不作为字段过滤 
+
+    ``select distinct deptno from emp``
+
+    //整体过滤,comm和deptno的组合不能重复
+    ``select distinct comm , deptno from emp``
+
+    //语法错误
+    ``select  comm ,distinct deptno from emp``
+
+not 
+
+    取反
+
+between
+
+    在某个范围内, sal between 1500 and 3000
+
+in
+
+    sal in (1500,3000,5000)
+
+    等价于 sal=1500 or sal=3000 or sal=5000
+
+top
+
+    在过滤后作用
+
+    前面2行记录
+
+    ``select top 2 * from emp``
+
+    前面百分之15记录,向上取整
+
+    ``select top 15 percent * from emp``
+
+null
+
+    **不能参与运算 =, !=**
+
+    可以与is和not is一起使用.
+
+    任何数据类型都允许为null.
+
+    null和任何数据做运算的结果都是null.
+
+ISNULL
+
+    用来计算
+
+    ISNULL(comm,0) 如果为null则为0。
+
+order by
+
+    order by sal desc 按照sal降序,不写desc 默认为升序
+
+    可以组合排序，先按部门排序，再按工资排序
+
+    ``select * from emp order by deptno ,sal``
+
+    升序降序单独作用.
+
+    ``select * from emp order by deptno desc,sal``
+
+模糊查询
+
+    %零个或多个 , _单个
+
+    ``select * from emp where ename like '%A%'``
+
+    必须用单引号括起来
+
+    a到f的字符.
+    
+    [a-f] 
+
+    a或f
+    [a,f]
+
+    取反
+    [^a-c]
+
+escape
+
+    转义字符,可以把任意的字符当作转义字符
+
+    用来辅助%和_的
+
+    ``SELECT * FROM products WHERE product_name LIKE 'Product\_Name%' ESCAPE '\'`` 这里_就变成一个普通字符了，而不是通配符
+
+
+聚合函数
+
+    有返回单行的也有返回多行的，会冲突.
+
+    lower() 小写
+
+    max() 最大值
+
+    min() 最小值
+
+    avg() 平均值
+
+    count() 求个数,不计算NULL
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+设置自增identity(1,1) 从1开始，以1自增.
+
+如果要在自增的的字段里面插入，必须要设置IDENTITY_INSERT为开.
+
+SET IDENTITY_INSERT emp ON;
+
+而且必须要写字段名。
+
+INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES 
+(7369, 'SMITH', 'CLERK', 7902, '1980-12-17', 800.00, NULL, 20),
+
+最后再关闭.
+
+SET IDENTITY_INSERT emp OFF;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mysql中注释是COMMNET,SQLserver中直接写--就行.
+
+as改名字,别用最好用双引号，因为oracle中不允许单引号.
+
+select empno,sal*12 as "年薪" from emp
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+where
+
+    过滤
+
+
+
