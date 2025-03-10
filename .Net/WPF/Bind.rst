@@ -31,16 +31,54 @@ INotifyPropertyChanged
 
 ``SetField`` 暂时没用上
 
+**谁实现OnPropertyChanged，谁的属性改变就会触发，但是如果属性是个类，
+那么类里面的属性改变不会触发，只有引用改变才会触发，除非给这个属性再实现OnPropertyChanged**
+
+
+
+
 ObservableCollection
 ----------------------
 ObservableCollection直接继承于Collection<T>, INotifyCollectionChanged, INotifyPropertyChanged，
-不需要再写自定义类，并且直接写{get;set;}就行，changed事件已经写好了.
+不需要再写自定义类，并且直接写{get;set;}就行，changed(其实是CollectionChanged)事件已经写好了.
+
+**如果List不用ObservableCollection，而是用INotifyPropertyChanged实现，那么只能监听到整个List的更改，
+而List其中的属性更改无法监听，所以还是要使用ObservableCollection**
+
+.. danger:: 
+
+   踩了个坑，我并未将ObservableCollection绑定到集合控件中，而是绑定到了TextBlock，再使用IValueConverter将其值转化为字符串，但是ObservableCollection内容改变的时候并没有触发UI改变。
+
+   这是因为TextBlock不是集合控件: ``<TextBlock Grid.Row="0" Text="{Binding ActionStack,Converter={StaticResource ListStringJoinConverter}}"></TextBlock>`` TextBlock绑定的仍然是整个ObservableCollection,只能监测到整个ObservableCollection的更改。
+
+   应该用集合控件ListBox等等来绑定，它会自动绑定到集合里面的元素。这样ObservableCollection内容改变时，UI将自动改变。
+
+
+IValueConverter
+-------------------
+数值转化器，在绑定的时候给数据进行一定的逻辑运算.
+
+写一个自定义Converter类继承 IValueConverter,实现 ``Convert``, ``ConvertBack`` 两个接口，
+
+|  Convert方法成员：输入的value及parameter参数，根据自定义逻辑判断，返回一个object对象给前端XAML使用。
+|  ConvertBack方法成员：与Convert相反，将前端输入的数据转换成另一个对象返回给后端的数据源。
+
+一般使用 ``Convert``。
+
+要在Resources声明这个Converter，才能使用.
+
+::
+
+   //local指的是本地的资源，SomeConverter是类,x:key为这个实例的变量名
+   //也就是new了一个SomeConverter类，实例名为SomeConverter。
+   <Window.Resources>
+      <local:SomeConverter x:key="SomeConverter"></local:SomeConverter>
+   </Window.Resources>
+
+   Text="{Bingding sometext,Converter={StaticResource SomeConverter}}"
 
 
 
-~~~~~~~~~~~~~~~~~~~~~~
-
-IPAddress.Any 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
