@@ -5,7 +5,6 @@ Delegate
 委托
 
 委托不是函数，后面的(string message)，
-
 意思不是让你传个string参数，而是这个delegate对应一个string参数的方法.
 
 ::
