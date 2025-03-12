@@ -1,5 +1,82 @@
+==============
 ASP.NET Core
 ===============
+
+Web UI
+--------------
+
+**对于新的项目开发，我们推荐 ASP.NET Core Blazor** --微软
+
+* ASP.NET Core Blazor
+
+    全栈 WebUI框架.
+
+* ASP.NET Core Razor Pages
+
+    基于页面的模型.
+
+    对 Razor Pages 的支持是建立在 ASP.NET Core MVC 基础之上的。
+    组织 ASP.NET Core 页面，使用起来比 ASP.NET MVC 更简单：
+
+* ASP.NET Core MVC
+
+    模型、视图和控制器
+
+    用户请求被路由到控制器
+
+* 其他
+
+    采用前端 JavaScript 框架的 ASP.NET Core 单页应用程序 (SPA)
+
+    组合多个 Web UI 解决方案：ASP.NET Core MVC 或 Razor Pages 和 Blazor
+
+ASP.NET Core Razor Pages
+----------------------------
+
+入门
+^^^^^^^^^^^^^^^^^^^^
+
+1. 创建模型类
+    
+    创建Models文件夹，在里面创建模型类Movies.cs
+
+2. 搭建基架  
+    
+    在Pages中创建Movies文件夹，添加 ``scaffolded item`` 选择Razor(CRUD).
+
+    会自动创建以下: 
+    
+    Pages/Movies：“创建”、“删除”、“详细信息”、“编辑”和“索引”。
+    
+    Data/RazorPagesMovieContext.cs
+
+3. 迁移和更新
+
+
+项目文件
+^^^^^^^^^^^^^^^^^
+
+* .cshtml 包含使用Razor语法的C#代码的HTML
+* .cshtml.cs 其中包含处理页面事件的C#代码
+
+_Layout.cshtml 文件可配置所有页面通用的 UI 元素.
+
+wwwroot文件夹: 包含静态资产，如 HTML 文件、JavaScript 文件和 CSS 文件.
+
+appsettings.json 包含配置数据, **连接sqlserver的凭证就写在这里**
+
+使用的是LocalDb
+    
+    SQL Server Express LocalDB
+
+    LocalDB是轻型版的SQL Server Express 数据库引擎，以程序开发为目标.
+
+    LocalDB 作为按需启动并在用户模式下运行的轻量级数据库没有复杂的配置.
+
+    默认情况下，LocalDB 数据库在C:\Users\<user>\ 目录下创建  ``*.mdf`` 文件。
+
+
+    
 
 Web API
 ---------------
