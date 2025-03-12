@@ -17,20 +17,22 @@ Welcome to BNN !
 
    Git/index
 
-   docs_build/index
+   memorandum/index
   
    computer/index
 
-   memorandum/index
+   Widgets/index
 
    meditation/index
 
-Indices and tables
-==================
+   docs_build/index
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. Indices and tables
+   ==================
+
+   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`
 
 
 

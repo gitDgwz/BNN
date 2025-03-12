@@ -29,4 +29,4 @@ language = 'zh_CN'
 html_theme = 'piccolo_theme'
 html_static_path = ['_static']
 
-html_short_title = "BNN Docs"
+html_short_title = "BNN Docs - bnn.readthedocs.io"

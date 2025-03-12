@@ -13,11 +13,34 @@
 * JetBrains Rider
 * VScode
 * Visual Studio
+  
+
+JetBrains Rider 
+^^^^^^^^^^^^^^^^^^^^
+
+非商业免费使用, 简单强大。 **非常推荐**
+
+
+Rider安装
+*******************
+直接官网下载，安装。简单方便。
+
+Rider内置工具
+*******************
+
+Entityframework Core
+
+    右键解决方案->Entityframework Core
+
+Database
+
+    View->Tool Windows->Database
+
 
 VScode
 ^^^^^^^^^^^^^^^^^^^^
 
-跨平台代码编辑器
+跨平台代码编辑器。可扩展性强，代价是需要懂得进行一定的配置，上手有点繁琐。
 
 vscode commands
 **********************

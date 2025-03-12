@@ -155,6 +155,10 @@ reStructuredText的基本用法
         .. note::
             text
 
+    注释::
+
+        .. text
+
     脚注::
 
         .. [#] text
