@@ -52,7 +52,6 @@ ASP.NET Core Razor Pages
 
 3. 迁移和更新
 
-
 项目文件
 ^^^^^^^^^^^^^^^^^
 
@@ -75,8 +74,19 @@ appsettings.json 包含配置数据, **连接sqlserver的凭证就写在这里**
 
     默认情况下，LocalDB 数据库在C:\Users\<user>\ 目录下创建  ``*.mdf`` 文件。
 
+模型绑定
+^^^^^^^^^^^^^^^^^^^
 
-    
+``[BindProperty(SupportsGet = true)]`` 可以让Get页面上接受属性参数.
+
+::
+
+    [BindProperty(SupportsGet = true)]
+    public string? SearchString { get; set; }
+
+    //https://localhost:5001/Movies?searchString=Ghost
+
+``@page "{searchString?}"`` 设置路由模板,可以直接 ``https://localhost:5001/Movies/Ghost``
 
 Web API
 ---------------
